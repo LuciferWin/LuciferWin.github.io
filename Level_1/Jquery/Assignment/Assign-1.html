@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery.min.js"></script>
+    <script>
+        $(function() {
+
+            $("#Married").on("click", function() {
+                $("#Wife").show()
+            })
+
+            $("#Single").on("click", function() {
+                $("#Wife").hide(300)
+            })
+
+            $("#Save").on("click", function() {
+                var Name = $("#Name").val()
+                var Age = $("#Age").val()
+                var Spouse = $("#Spouse").val()
+                var Single = $("#Single").val()
+                var Married = $("#Married").val()
+                if (Spouse == false) {
+                    alert(Name + " is Single & " + Age + " years Old .")
+                } else {
+                    alert(Name + " is Married & " + Age + " years Old . His Spouse is " + Spouse + ".")
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <center>
+        <h1>Choosing Relationship Status</h1>
+        <form action="" method="get">
+
+            <label for="Name">Name&nbsp;&nbsp;:</label>
+            <input type="text" name="Name" id="Name" style="border-radius: 10px; padding: 3px;">
+
+            <br><br>
+
+            <label for="Age">Age&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</label>
+            <input type="number" name="Age" id="Age" style="border-radius: 10px; padding: 3px;">
+
+            <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+
+            <input type="radio" name="Status" value="Single" id="Single">Single &nbsp;
+            <input type="radio" name="Status" value="Married" id="Married">Married
+
+
+            <div id="Wife" style="display: none;" style="margin-top: 0px;">
+                <br>
+                <label for="Spouse">Spouse:</label>
+                <input type="text" name="Spouse" id="Spouse" style="border-radius: 10px; padding: 3px;">
+            </div>
+
+            <br><br>
+
+            <button type="button" id="Save">Save</button>
+
+        </form>
+        <br>
+
+    </center>
+
+
+    <style>
+        * {
+            background-color: rgb(233, 177, 228);
+        }
+        
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        
+        #Save {
+            background-color: aqua;
+            border: 0px;
+            font-style: oblique;
+            font-size: 20px;
+            margin-left: 60px;
+            border-radius: 20px;
+        }
+        
+        h1 {
+            text-decoration: underline 3px aqua;
+        }
+    </style>
+</body>
+
+</html>

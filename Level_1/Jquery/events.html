@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $ ( function () {
+            $ ( "button" ) .on ( "click" , function () {
+                $( "h1" ). hide ( function (param) {
+                    alert ( "Hi jQuery" )
+                    });
+            })
+            // Working On Link
+            $ ( "#mylink").on ( "click" ,function (e) {
+                
+                e.preventDefault()
+                var link = $ (this).attr("href")
+                var text = `link is ${link}`
+                alert(link)
+
+            })
+            // Working On Form
+            $("#change").on("focus",function(){
+                var total = Number($("#total").val())
+                var pay = Number($("#pay").val())
+                var change = pay - total
+                $("#change").val(change)
+            })
+            
+            $("#place").on("change",function(){
+                var place = $(this).val();
+                if(place==1){
+                    $("#yangon").show();
+                    $("#mandalay").hide();
+                }else{
+                    $("#yangon").hide();
+                    $("#mandalay").show();
+                }
+            })
+
+            $ ( "#myform").on("submit",function(e) {
+                var username = $ ("#username").val()
+                var age = $ ("#age").val()
+
+                if (age<18){
+                    e.preventDefault()
+                }
+
+
+
+            })
+        })
+
+    
+    </script>
+</head>
+<body>
+    <h1>Hello JQ Events</h1>
+
+    <button>Click</button>
+
+    <a href="https://google.com" target="_blank" id="mylink">Google</a>
+
+    <form action="" id="myform">
+
+        <input type="text" name="username" id="username">
+        <br>
+        <input type="number" name="age" id="age">
+        <br>
+        <!-- Focus -->
+        <input type="number" name="total" id="total">
+        <br>
+        <input type="number" name="pay" id="pay">
+        <br>
+        <input type="number" name="change" id="change">
+        <br>
+        
+
+        <!-- Change -->
+        <select name="place" id="place">
+            <optgroup label="Choose Location">
+                <option value="1">Yangon</option>
+                <option value="2">Mandalay</option>
+            </optgroup>
+        </select>
+
+        <div id="yangon" style="display: none;">
+            Yangon
+        </div>
+        <div id="mandalay" style="display: none;">
+            Mandalay
+        </div>
+
+        <input type="submit" value="Save">
+    </form>
+
+
+
+</body>
+</html>

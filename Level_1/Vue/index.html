@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="main.js"></script>
+
+
+</head>
+
+<body>
+    <h1>Hello Vue.js</h1>
+
+    <div id="app">
+        {{name}} is {{age}} <br>
+
+        <button @click="age++">Increase</button> <br>
+
+        <img :src="profile" alt="">
+
+        <p><span v-html="para"></span></p>
+
+        <button @click="reverse">Reverse Name</button> <br>
+
+        <button :id="`no-${id}`">Detail</button>
+
+        <p v-if="seen">Now You See Me</p>
+
+        <p v-if="mark>40 && mark<80">Pass</p>
+        <p v-else-if="mark=>80">D</p>
+        <p v-else>Fail</p>
+
+        <ul>
+            <li v-for="(student,index) in students">{{index + 1}} - {{student.name}}</li>
+        </ul>
+
+        {{boys.length}} <br> {{girls.length}} <br>
+        <input type="text" placeholder="Enter Name Here" v-model="username"> <br> {{username | currencydecimal}}
+    </div>
+
+    <script>
+        const mountedApp = app.mount("#app")
+    </script>
+
+</body>
+
+</html>
+<!-- 
+    Backend => Server / Business Model / Database / JSON - API
+    Frontend => UI
+ -->

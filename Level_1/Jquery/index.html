@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Introduction</title>
+    <!-- JQuery -->
+    <script src="jquery.min.js"></script>
+
+    <!-- Custom -->
+    <!-- <script src="custom.js"></script> -->
+
+    <script>
+        $(document).ready(function () {
+            var h1 = $("h1") //element selector
+            console.log(h1)
+
+            var ptag = $ ( "#ptag" )
+            console.log(ptag)
+
+            $("button").click ( function () {
+                alert ( "ok" )
+            })
+            var article = $ ( ".detail" )
+            console.log ( article )
+
+            var li = $ ( "#content ul.people li" )
+            console.log ( li )
+
+        })
+    </script>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <h1>Hello Noobs!</h1>
+
+    <p id="ptag">I am New  JQuery</p>
+
+    <button> Click </button>
+    <br><br><br>
+    <article class="detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, dolorem!</article><br>
+    <article class="detail">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum, sed?</article><br>
+    <article class="detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, alias.</article><br>
+
+    <div class="detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. At, placeat.</div>
+    <div id="content">
+        <ul class="student">
+            <li>Ye Win Tun</li>
+            <li>Lar Non San Ngar</li>
+            <li>Nyein Chan Htet</li>
+        </ul>
+    <hr>
+        <ul class="people">
+            <li>Kyaw Htin Hein</li>
+            <li>Kaung Set Linn</li>
+            <li>Han Min Nyo</li>
+        </ul>
+    </div>
+    
+    <div></div>
+    <section></section>
+    <article></article>
+
+
+</body>
+</html>

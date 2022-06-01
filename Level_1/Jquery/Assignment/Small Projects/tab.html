@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul.link-wapper {
+            list-style: none;
+            text-align: center;
+        }
+        
+        ul.link-wapper li {
+            display: inline-block;
+            padding: 10px;
+        }
+        
+        ul.link-wapper li a {
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            padding: 10px;
+        }
+        
+        ul.link-wapper li a:hover {
+            color: steelblue;
+            letter-spacing: 2px;
+            transition: 0.2s;
+        }
+        
+        .content {
+            max-width: 80%;
+            background-color: lightblue;
+            padding: 20px;
+            margin: 0 auto;
+            display: none;
+        }
+    </style>
+    <script src="../../jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("#thome").on("click", function() {
+                $(this).css("color", "blue")
+                $("#tservices , #tabout , #tcontact").css("color", "black")
+                $("#home").slideDown()
+                $("#services , #about ,#contact").slideUp()
+
+            })
+            $("#tservices").on("click", function() {
+                $(this).css("color", "blue")
+                $("#thome , #tabout , #tcontact").css("color", "black")
+                $("#services").slideDown()
+                $("#home , #about , #contact").slideUp()
+            })
+            $("#tabout").on("click", function() {
+                $(this).css("color", "blue")
+                $("#thome , #tservices , #tcontact").css("color", "black")
+                $("#about").slideDown()
+                $("#home , #services , #contact").slideUp()
+            })
+            $("#tcontact").on("click", function() {
+                $(this).css("color", "blue")
+                $("#thome , #tabout , #tservices").css("color", "black")
+                $("#contact").slideDown()
+                $("#home , #services , #about").slideUp()
+            })
+        })
+        window.onload = function() {
+            $("#home").slideDown()
+            $("#thome").css("color", "blue")
+            $("#tservices , #tabout , #tcontact").css("color", "black")
+        }
+    </script>
+</head>
+
+<body>
+    <div class="tab">
+        <!-- Nav Bar -->
+        <ul class="link-wapper">
+            <li>
+                <a href="#home" id="thome">Home</a>
+            </li>
+            <li>
+                <a href="#services" id="tservices">Services</a>
+            </li>
+            <li>
+                <a href="#about" id="tabout">About</a>
+            </li>
+            <li>
+                <a href="#contact" id="tcontact">Contact</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Content -->
+    <div class="content" id="home">
+        <h2>Home</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, doloribus! Temporibus eligendi, ullam hic, quos impedit assumenda necessitatibus numquam obcaecati velit ut eius voluptas illo voluptatibus est at nostrum pariatur.</p>
+    </div>
+    <div class="content" id="services">
+        <h2>Services</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, doloribus! Temporibus eligendi, ullam hic, quos impedit assumenda necessitatibus numquam obcaecati velit ut eius voluptas illo voluptatibus est at nostrum pariatur.</p>
+    </div>
+    <div class="content" id="about">
+        <h2>About</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, doloribus! Temporibus eligendi, ullam hic, quos impedit assumenda necessitatibus numquam obcaecati velit ut eius voluptas illo voluptatibus est at nostrum pariatur.</p>
+    </div>
+    <div class="content" id="contact">
+        <h2>Contact</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, doloribus! Temporibus eligendi, ullam hic, quos impedit assumenda necessitatibus numquam obcaecati velit ut eius voluptas illo voluptatibus est at nostrum pariatur.</p>
+    </div>
+
+</body>
+
+</html>

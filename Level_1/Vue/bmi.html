@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    feet: "",
+                    inches: "",
+                    lb: "",
+                    result: "",
+                    message: ""
+                }
+            },
+            methods: {
+                calculate() {
+                    var height = parseInt(this.feet * 12 + this.inches)
+                    var weight = parseInt(this.lb)
+                    this.result = parseInt((weight * 703) / (height * height))
+                    if (this.result < 18.5) {
+                        this.message = "You are under weight"
+                    } else if (this.result >= 18.5 && this.result <= 24.9) {
+                        this.message = "You are normal weight"
+                    } else if (this.result > 24.9 && this.result <= 29.9) {
+                        this.message = "You are over weight"
+                    } else {
+                        this.message = "You are Obese"
+                    }
+                }
+            },
+        })
+    </script>
+</head>
+
+<body>
+
+    <div id="app">
+        <center><br><br>
+            <form action="">
+                <label for="feet">Feet</label>&nbsp;<input type="number" name="feet" v-model="feet">&nbsp;&nbsp;&nbsp;
+                <label for="inches">Inches</label>&nbsp;<input type="number" name="inches" v-model="inches"><br><br>
+                <label for="lb">lb</label>&nbsp;<input type="number" name="lb" v-model="lb"><br><br>
+                <button type="button" @click="calculate">Calculate</button>
+            </form>
+            <p>Your BMI is {{result}}</p>
+            <p>{{message}}</p>
+        </center>
+    </div>
+
+
+    <script>
+        const mountedApp = app.mount("#app")
+    </script>
+</body>
+
+</html>

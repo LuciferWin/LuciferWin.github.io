@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Data Binding</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function() {
+            var student = [{
+                name: "Alex",
+                age: 20,
+                gender: "male"
+            }, {
+                name: "John",
+                age: 21,
+                gender: "male"
+            }, {
+                name: "James",
+                age: 22,
+                gender: "male"
+            }, {
+                name: "Lucifer",
+                age: 22,
+                gender: "male"
+            }, {
+                name: "Sanny",
+                age: 23,
+                gender: "female"
+            }, {
+                name: "Thel Thel",
+                age: 21,
+                gender: "female"
+            }, {
+                name: "Lana",
+                age: 20,
+                gender: "female"
+            }, {
+                name: "Anna",
+                age: 21,
+                gender: "female"
+            }]
+
+            var femaleStudent = student.filter(row => row.gender == "female")
+
+            console.log(student)
+            var data = ""
+            $.each(femaleStudent, function(i, v, s = i + 1) {
+                data += `<tr>
+                            <td>${s}</td>
+                            <td>${v.name}</td>
+                            <td>${v.age}</td>
+                            <td>${v.gender}</td>
+                            <td>
+                                <button class="detailbtn" data-id=${i}>Detail</button>
+                            </td>
+                        </tr>`
+            })
+            $("#mytbody1").html(data)
+
+            //Detail Btn Click Event
+            $(".detailbtn").on("click", function() {
+                var id = $(this).data("id")
+                var name = femaleStudent[id].name
+                var age = femaleStudent[id].age
+                var gender = femaleStudent[id].gender
+                alert(`${name} is ${age} years old , ${gender}`)
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <table border="1" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="mytbody1">
+
+        </tbody>
+    </table>
+
+</body>
+
+</html>

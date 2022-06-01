@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        .red {
+            color: red;
+        }
+    </style>
+    <script>
+        $(function() {
+            $("#hidebtn").on("click", function() {
+                $("p").fadeOut(500)
+            })
+            $("#showbtn").on("click", function() {
+                $("p").fadeIn("fast")
+            })
+            $("#togglebtn").on("click", function() {
+                $("p").toggle("slow")
+            })
+            $("#fadetobtn").on("click", function() {
+                $("p").fadeTo("slow", 0.5)
+            })
+            $("#slidetogglebtn").on("click", function() {
+                $("p").slideToggle(250)
+            })
+            $("#movebtn").on("click", function() {
+                $("div").animate({
+                    left: '800px',
+                    width: '+=100px',
+                    height: '+=200px'
+                })
+            })
+            $("#changebtn").on("click", function() {
+                $("#myp").css("color", "red").css("font-size", "20px").css("font-family", "Arial")
+            })
+
+            $("#addcolor").on("click", function() {
+                var h1 = $("h1")
+                if (!h1.hasClass("red")) {
+                    h1.addClass("red")
+                } else {
+                    h1.removeClass("red")
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <p id="myp">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut id doloremque doloribus nostrum. Velit nam in est iusto, itaque enim minima? Quidem accusantium fugiat fugit aut error nisi enim numquam.</p>
+
+    <div style="width: 100px; height: 100px; background-color: red; position: relative;">
+    </div>
+
+    <h1>
+        Hello JQ Effects
+    </h1>
+
+    <br><br>
+    <button id="hidebtn">Hide</button>
+    <button id="showbtn">Show</button>
+    <button id="togglebtn">Toggle</button>
+    <button id="fadetobtn">Fade To</button>
+    <button id="slidetogglebtn">Slide Toggle</button>
+    <button id="movebtn">Move</button>
+    <button id="changebtn">Change</button>
+    <button id="addcolor">Add Or Remove Color</button>
+</body>
+
+</html>
