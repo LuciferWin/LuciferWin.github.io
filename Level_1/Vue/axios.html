@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using AXIOS</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        const app = Vue.createdApp({
+            data() {
+                return {
+                    memes: [],
+                }
+            },
+            methods: {
+                getMemes() {
+                    /*axios.get('https://api.imgflip.com/get_memes')
+                        .then(reponse => )*/
+                    alert('Ok')
+                }
+            },
+        })
+    </script>
+</head>
+
+<body>
+
+    <div id="app">
+        <button type="button" @click="getMemes">Get Memes</button>
+    </div>
+
+
+    <script>
+        const mountedApp = app.mout("#app")
+    </script>
+</body>
+
+</html>
