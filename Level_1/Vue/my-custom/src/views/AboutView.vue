@@ -1,9 +1,10 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1>About Page</h1>
   </div>
+  <PartFile></PartFile>
 </template>
-<!-- <script>
+<script>
 // @ is an alias to /src
 import PartFile from '@/components/PartFile.vue';
 
@@ -13,6 +14,6 @@ export default {
     PartFile
   }
 }
-</script> -->
+</script>
 
 
