@@ -1,0 +1,88 @@
+Day - 1 
+-------
+- node_modules ) for package
+
+- public => Entry Point
+
+- src => Source File
+        => Components (.vue)
+            - Cart Item
+
+        =>views (.vue)
+            - Home, About, Shop
+
+- .vue File
+    => template (HTML)
+    => script (JS)
+    => style (CSS)
+
+- ES6
+
+Day - 2
+-------
+ 1. In Browser 
+    - home.html / about.html / contact.html
+    - link a href
+    - script src => main framework
+        - createApp
+            - data => vars define
+            - methods => function
+            - computed => build-in functions always Return
+            - filter => functions (return)
+            - created 
+            - mounted 
+        - DOM 
+            - reactivity
+            - rendering
+            - v-if / v-for / v-html / v-bind / v-on 
+
+ 2. CLI (Command Line Interface)
+    - index.html 
+    - import 
+    - import main framework 
+    - Create nly Vue App
+        - Views (.vue)
+        - Router (route => view)
+        - Components (.vue)
+        - HelloWorld / HomePage / NavBar / FooterPart \
+    
+                Home Page 
+                    - NavBar 
+                    - Slider 
+                    - Content 
+                    - ADS Section 
+                    - Footer 
+
+                About Page
+                    - NavBar
+                    - About Section
+                    - Footer 
+                
+                Contact Page
+                    - NavBar
+                    - Contact Form 
+                    - Footer
+
+
+
+                -View- 
+                    - HomePage 
+                    - AboutPage
+                    - ContactPage 
+                
+                -Components-
+                    - NavBar
+                    - Footer
+
+
+
+
+
+
+
+
+
+
+
+
+
