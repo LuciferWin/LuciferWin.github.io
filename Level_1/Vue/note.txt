@@ -1,3 +1,0 @@
-create vue project-name
-Cd project folder
-npm run serve
