@@ -29,6 +29,7 @@
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
 const axios = require('axios').default;
+
 export default {
   name: 'HomeView',
   components: {
